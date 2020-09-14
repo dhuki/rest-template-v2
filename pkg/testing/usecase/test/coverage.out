@@ -1,0 +1,22 @@
+mode: set
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:29.74,31.2 2 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:42.2,45.17 3 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:31.2,34.17 2 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:40.3,40.29 1 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:34.17,38.4 1 0
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:48.100,50.16 2 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:57.2,57.12 1 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:61.2,66.3 1 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:50.16,54.3 1 0
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:57.12,59.3 1 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:69.104,71.16 2 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:77.2,82.3 1 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:71.16,75.3 1 0
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:85.103,87.16 2 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:93.2,98.3 1 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/usecaseImpl.go:87.16,91.3 1 0
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/test/mock.go:14.84,19.2 2 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/test/mock.go:21.87,24.2 2 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/test/mock.go:26.98,28.2 1 0
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/test/mock.go:30.85,33.2 2 1
+github.com/dhuki/rest-template-v2/pkg/testing/usecase/test/mock.go:39.80,41.2 1 1

@@ -1,0 +1,14 @@
+mode: set
+github.com/dhuki/rest-template-v2/pkg/testing/infrastructure/testTableRepoImpl.go:18.65,22.2 1 1
+github.com/dhuki/rest-template-v2/pkg/testing/infrastructure/testTableRepoImpl.go:24.84,28.21 3 1
+github.com/dhuki/rest-template-v2/pkg/testing/infrastructure/testTableRepoImpl.go:32.2,32.24 1 1
+github.com/dhuki/rest-template-v2/pkg/testing/infrastructure/testTableRepoImpl.go:28.21,30.3 1 0
+github.com/dhuki/rest-template-v2/pkg/testing/infrastructure/testTableRepoImpl.go:35.79,41.21 3 1
+github.com/dhuki/rest-template-v2/pkg/testing/infrastructure/testTableRepoImpl.go:45.2,45.24 1 1
+github.com/dhuki/rest-template-v2/pkg/testing/infrastructure/testTableRepoImpl.go:41.21,43.3 1 0
+github.com/dhuki/rest-template-v2/pkg/testing/infrastructure/testTableRepoImpl.go:48.98,52.21 3 1
+github.com/dhuki/rest-template-v2/pkg/testing/infrastructure/testTableRepoImpl.go:56.2,56.24 1 1
+github.com/dhuki/rest-template-v2/pkg/testing/infrastructure/testTableRepoImpl.go:52.21,54.3 1 0
+github.com/dhuki/rest-template-v2/pkg/testing/infrastructure/testTableRepoImpl.go:59.90,61.21 2 1
+github.com/dhuki/rest-template-v2/pkg/testing/infrastructure/testTableRepoImpl.go:64.2,64.12 1 1
+github.com/dhuki/rest-template-v2/pkg/testing/infrastructure/testTableRepoImpl.go:61.21,63.3 1 0
