@@ -2,6 +2,7 @@ package common
 
 import (
 	"errors"
+	"fmt"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -9,7 +10,7 @@ import (
 
 // create type of contextKey for key context
 type (
-	contextKey uint
+	routerParams uint
 )
 
 // cons db
@@ -68,7 +69,7 @@ func LoadCons(path string) error {
 
 	Host = os.Getenv("base.host")
 	Port = os.Getenv("base.port")
-	BaseUrl = os.Getenv("base.url")
+	BaseUrl = fmt.Sprintf("%s/%s", os.Getenv("base.url"), "api")
 
 	DbUsername = os.Getenv("db.username")
 	DbPassword = os.Getenv("db.password")

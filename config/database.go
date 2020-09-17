@@ -11,6 +11,11 @@ import (
 	"gorm.io/gorm/logger"
 )
 
+// gorm is still powefull because it's orm framework with bunch of functionality
+// like preloading, erager_loading and many more
+// but it's not fast enough than sqlx, or pq lib.
+// downside of sqlx and pq is you have to do manully all of stuff to deal with database 
+// because lack functionality that available in that orm lib.
 func NewDatabase() (*gorm.DB, error) {
 	// by default sslmode=enable, so you have to connect with ssl
 	// since your server doesn't provide it
@@ -49,7 +54,8 @@ func NewDatabase() (*gorm.DB, error) {
 
 	// Set maximum lifetime of connection before retiring it.
 	// if idle connection has been reached max lifetime it'll destroy connection
-	// but otherwise if connection is in use it'll wait until connection back again to the
+	// but if connection is in use and has reach max lifetime 
+	// it'll wait until connection back again to the
 	// pool and then destory it.
 	sqlDB.SetConnMaxLifetime(10 * time.Minute)
 

@@ -11,5 +11,5 @@ const RESPONSE_MSG_SUCCESS = "Success"
 
 // const for request model
 const (
-	ContextKeyRequestModel contextKey = iota
+	Params routerParams = iota
 )

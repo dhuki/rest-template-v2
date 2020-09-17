@@ -16,7 +16,7 @@ import (
 	"github.com/go-kit/kit/log/level"
 	"github.com/go-redis/redis/v8"
 	"github.com/gorilla/handlers"
-	"github.com/gorilla/mux"
+	"github.com/justinas/alice"
 	"gorm.io/gorm"
 )
 
@@ -103,7 +103,7 @@ func main() {
 			AddPersistent(db, elasticlient, redisClient).
 			AddUtils(utils.NewUtils().
 				WireWithEmail(email)).
-			AddMiddlewares([]mux.MiddlewareFunc{
+			AddMiddlewares([]alice.Constructor{
 				// list of middleware that needed, order is matter
 				handlers.CompressHandler,
 				// middleware.TokenBucketLimiter(bucketToken, logger),

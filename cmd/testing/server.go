@@ -10,7 +10,8 @@ import (
 	"github.com/elastic/go-elasticsearch/v7"
 	"github.com/go-kit/kit/log"
 	"github.com/go-redis/redis/v8"
-	"github.com/gorilla/mux"
+	"github.com/julienschmidt/httprouter"
+	"github.com/justinas/alice"
 	"gorm.io/gorm"
 )
 
@@ -19,16 +20,16 @@ type server interface {
 }
 
 type testingServer struct {
-	mux          *mux.Router
+	mux          *httprouter.Router
 	db           *gorm.DB
 	elasticlient *elasticsearch.Client
 	redisClient  *redis.Client
-	middlewares  []mux.MiddlewareFunc
+	middlewares  []alice.Constructor
 	utils        utils.Utils
 	logger       log.Logger
 }
 
-func NewServer(mux *mux.Router) testingServer {
+func NewServer(mux *httprouter.Router) testingServer {
 	return testingServer{
 		mux: mux,
 	}
@@ -46,7 +47,7 @@ func (t testingServer) AddUtils(utils utils.Utils) testingServer {
 	return t
 }
 
-func (t testingServer) AddMiddlewares(middlewares []mux.MiddlewareFunc) testingServer {
+func (t testingServer) AddMiddlewares(middlewares []alice.Constructor) testingServer {
 	t.middlewares = middlewares
 	return t
 }

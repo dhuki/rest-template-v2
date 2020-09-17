@@ -9,13 +9,13 @@ import (
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
 	httptransport "github.com/go-kit/kit/transport/http"
-	"github.com/gorilla/mux"
 	"github.com/juju/ratelimit"
+	"github.com/justinas/alice"
 )
 
 // middleware rate limiter prevent for DDoS attack
 // concurrent limit, limit all request for 5 request/minutes this is just example simple rate limiter by juju
-func TokenBucketLimiter(bucket *ratelimit.Bucket, logger log.Logger) mux.MiddlewareFunc {
+func TokenBucketLimiter(bucket *ratelimit.Bucket, logger log.Logger) alice.Constructor {
 	return func(next http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			ctx := r.Context()

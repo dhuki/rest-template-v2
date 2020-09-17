@@ -6,17 +6,17 @@ import (
 	"time"
 
 	"github.com/dhuki/rest-template-v2/common"
-	"github.com/gorilla/handlers"
-	"github.com/gorilla/mux"
+	"github.com/julienschmidt/httprouter"
+	"github.com/rs/cors"
 )
 
 type router struct {
-	Mux    *mux.Router
+	Mux    *httprouter.Router
 	Server *http.Server
 }
 
 func NewRouter() router {
-	mux := mux.NewRouter().PathPrefix(common.BaseUrl).Subrouter()
+	mux := httprouter.New()
 
 	return router{
 		Mux:    mux,
@@ -24,14 +24,15 @@ func NewRouter() router {
 	}
 }
 
-func wireWithCors(r *mux.Router) http.Handler {
-	return handlers.CORS(
-		handlers.AllowedOrigins([]string{"*"}),
-		handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE", "PATCH"}),
-	)(r)
+func wireWithCors(r *httprouter.Router) http.Handler {
+	// c := cors.New(cors.Options{
+	// 	AllowedOrigins: []string{"www.google.com"},
+	// })
+
+	return cors.Default().Handler(r)
 }
 
-func createServer(r *mux.Router) *http.Server {
+func createServer(r *httprouter.Router) *http.Server {
 	// using pointer bcs receiver is pointer
 	// actually it's okay to use not pointer even receiver is pointer
 	// bcs this struct not return an interface
@@ -50,13 +51,13 @@ func (r router) Start() error {
 
 // function to get to know that available router
 // it is directly from mux router doc
-func (r router) GetListRouterAvailable() {
-	r.Mux.Walk(func(route *mux.Route, router *mux.Router, ancestors []*mux.Route) error {
-		t, err := route.GetPathTemplate()
-		if err != nil {
-			return err
-		}
-		fmt.Println(t)
-		return nil
-	})
-}
+// func (r router) GetListRouterAvailable() {
+// 	r.Mux.Walk(func(route *mux.Route, router *mux.Router, ancestors []*mux.Route) error {
+// 		t, err := route.GetPathTemplate()
+// 		if err != nil {
+// 			return err
+// 		}
+// 		fmt.Println(t)
+// 		return nil
+// 	})
+// }
